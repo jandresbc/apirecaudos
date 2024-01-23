@@ -1,0 +1,72 @@
+Query:
+  type: object
+  config:
+    description: "Facturas ORM repository"
+    fields:
+      Facturas:
+        type: "[Facturas]"
+        args:
+          nroFactura:
+            description: "Número de la Factura que desea consultar."
+            type: "String!"
+          valorFactura:
+            description: "Valor de la Factura a Consultar."
+            type: "Float"
+          nitEmpresa:
+            description: "Nit de la Empresa a Consultar."
+            type: "String!"
+        resolve: "@=resolver('Facturas', [args])"
+      Empresas:
+        type: "Empresas"
+        args:
+          idEmpresa:
+            description: "ID de la Empresa que desea consultar."
+            type: "Int!"
+        resolve: "@=resolver('Empresas', [args])"
+      Pagos:
+        type: "[ListaPagos]"
+        args:
+          nitEmpresa:
+            description: "Nit de la Empresa que tiene registrado los pagos."
+            type: "String!"
+          anioFacturado:
+            description: "Año del periodo facturado ha filtrar."
+            type: "Int"
+          mesFacturado:
+            description: "Mes del periodo facturado ha filtrar."
+            type: "Int"
+          fechaInicio:
+            description: "Fecha desde cuando se quieren que se filtren los pagos."
+            type: "String"
+          fechaFinal:
+            description: "Fecha hasta donde se quieren que se filtren los pagos."
+            type: "String"
+          nroTransaccion:
+            description: "El código de la transacción que registro este pago."
+            type: "String"
+          nroFactura:
+            description: "Nro. de la Factura si se desea filtrar los pagos por este campo."
+            type: "String"
+          matricula:
+            description: "Nro de la matricula o NIU si se desea filtrar los pagos por este campo."
+            type: "String"
+          orden:
+            description: "Ordenamiento de los Registros ASC(Ascendente) o DESC(Descendente). Se ordenará de acuerdo a la fecha del pago."
+            type: "String"
+          limite:
+            description: "Limite de registros por página."
+            type: "Int"
+          pag:
+            description: "Número de la página de los registros."
+            type: "Int"
+        resolve: "@=resolver('Pagos',[args])"
+      Login:
+        type: "Login"
+        args:
+          user:
+            type: "String!"
+            description: "Usuario con el cual se desea autenticar en el sistema."
+          pass:
+            type: "String!"
+            description: "Contraseña de la cuenta de usuario del sistema."
+        resolve: "@=resolver('Login', [args])"

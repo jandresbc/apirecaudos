@@ -1,0 +1,14 @@
+Empresas:
+  type: object
+  config:
+    description: "Obtiene la información de cada Empresa."
+    fields:
+      idEmpresa:
+        type: "Int"
+        description: "Código único de la empresa."
+      razonSocial:
+        type: "String"
+        description: "Nombre de la Empresa."
+      nit:
+        type: "String"
+        description: "Número de identificación tributaria de la Empresa."

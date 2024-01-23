@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+#api:
+    #path: /api/login
+    #controller: App\Controller\LoginController::login
+
+api_login_check:
+    path: /api/login_check

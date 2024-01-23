@@ -1,0 +1,43 @@
+Facturas:
+  type: object
+  config:
+    description: "Schema Facturas"
+    fields:
+      idFactura:
+        type: "ID!"
+        description: "Código de la factura."
+      nroFactura:
+        type: "String!"
+        description: "Número de la factura."
+      matricula:
+        type: "String"
+        description: "Código de la matricula o NIU del usuario."
+      nombreUsuario:
+        type: "String"
+        description: "Nombre del Usuario del Servicio."
+      concepto:
+        type: "String"
+        description: "Concepto del periodo de facturación actual."
+      valorFactura:
+        type: "Float"
+        description: "Valor a cobrar de la factura."
+      fechaVencimiento:
+        type: "String"
+        description: "Fecha de vencimiento de la factura."
+      mesFacturado:
+        type: "Int"
+        description: "Mes del periodo facturado."
+      anioFacturado:
+        type: "Int"
+        description: "Año del periodo facturado."
+      idEmpresa:
+        type: "String!"
+      error:
+        type: "String"
+        description: "Boolean que identifica si es un error o no."
+      message:
+        type: "String"
+        description: "Mensaje del error."
+      code:
+        type: "Int"
+        description: "Código del error."

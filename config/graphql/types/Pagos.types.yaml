@@ -1,0 +1,32 @@
+Pagos:
+  type: object
+  config:
+    description: "Obtiene la información de los Pagos registrados y su transacción."
+    fields:
+      idPago:
+        type: "Int"
+        description: "Código único cada pago."
+      valorTotalPagado:
+        type: "Float"
+        description: "Valor total pagado en la transacción."
+      fechaHoraPago:
+        type: "String"
+        description: "Fecha y hora en la cual se realizó el pago. Fecha en el que se registró el pago en el sistema."
+      codigoTransaccion:
+        type: "String"
+        description: "Código generado al guardarse la transacción con sus pagos. Con este código el cliente puede consultar sus pagos en el sistema de recaudos web."
+      codigoSeguridad:
+        type: "String"
+        description: "Código de seguridad generado al guardarse la transacción con sus pagos. Sirve para comprabar si el pago es válido."
+      facturasPagadas:
+        type: "[Facturas]"
+        description: "Facturas que han sido pagadas."
+      error:
+        type: "String"
+        description: "Boolean que identifica si es un error o no."
+      message:
+        type: "String"
+        description: "Mensaje del error."
+      code:
+        type: "Int"
+        description: "Código del error."

@@ -1,0 +1,64 @@
+ListaPagos:
+  type: object
+  config:
+    description: "Obtiene la información de los Pagos registrados y su transacción."
+    fields:
+      idPago:
+        type: "Int"
+        description: "Código único cada pago."
+      valorPago:
+        type: "Float"
+        description: "Valor total pagado en la transacción."
+      saldo:
+        type: "String"
+        description: "Saldo de la factura que se pago en caso de haber un saldo a favor o en contra del cliente."
+      fechaHoraPago:
+        type: "String"
+        description: "Fecha y hora en la cual se realizó el pago. Fecha en el que se registró el pago en el sistema."
+      banco:
+        type: "String"
+        description: "El banco donde ingresó el pago."
+      fechaConsignacion:
+        type: "String"
+        description: "Fecha en la que se consignón el pago."
+      nroConsignacion:
+        type: "String"
+        description: "Número de la consignación o operación del pago."
+      nroCheque:
+        type: "String"
+        description: "Número del cheque en el caso de que se haya efectuado el pago con cheque."
+      observaciones:
+        type: "String"
+        description: "Observaciones del pago."
+      metodoPago:
+        type: "String"
+        description: "Método de pago. Efectivo, Consignación, PSE, etc."
+      tipoPago:
+        type: "String"
+        description: Tipo de pago. Se refiere si fue un pago total, parcial o avance."
+      nroTransaccion:
+        type: "String"
+        description: "Código generado al guardarse la transacción con sus pagos."
+      codigoSeguridad:
+        type: "String"
+        description: "Código de seguridad generado al guardarse la transacción con sus pagos."
+      facturas:
+        type: "[Facturas]"
+        description: "Facturas que han sido pagadas."
+      registro:
+        type: "Int"
+      totalRegistros:
+        type: "Int"
+      pagina:
+        type: "Int"
+      totalPaginas:
+        type: "Int"
+      error:
+        type: "String"
+        description: "Boolean que identifica si es un error o no."
+      message:
+        type: "String"
+        description: "Mensaje del error."
+      code:
+        type: "Int"
+        description: "Código del error."

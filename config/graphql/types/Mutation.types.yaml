@@ -1,0 +1,22 @@
+Mutation:
+  type: object
+  config:
+    description: "Pargos ORM repository"
+    fields:
+      Pagos:
+        type: "Pagos"
+        description: "Se usa para registrar el pago de una factura en el sistema."
+        args:
+          idFacturas:
+            description: "IDs de las facturas a registrar su pago. Cada ID se debe separar por comas(,)."
+            type: "String!"
+          fechaHoraPago:
+            description: "Fecha y hora en la cual se realizó el pago. Fecha en el que se registró el pago en el sistema."
+            type: "String!"
+          idCaja:
+            description: "Código interno de la caja a la cual se le registrará el pago."
+            type: "Int!"
+          idUsuario:
+            description: "Código interno del usuario al cual se le registrará el pago."
+            type: "Int!"
+        resolve: "@=mutation('registrarPago', [args])"

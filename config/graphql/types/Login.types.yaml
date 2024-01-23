@@ -1,0 +1,29 @@
+Login:
+  type: object
+  config:
+    description: "Schema Login. Método de autenticación al sistemas de recuados web. Parámetros requeridos user y pass."
+    fields:
+      _token:
+        type: "String"
+        description: "Token de Autenticación para el consumo de los demás endpoint del API.(Campo requerido)"
+      idUsuario:
+        type: "Int"
+        description: "ID del usuario autenticado. (Campo requerido)"
+      idCaja:
+        type: "Int"
+        description: "ID de la Caja a la que esta asociado el usuario. A este ID es que se registrarán los pagos en el endpoint de Pagos. (Campo requerido)"
+      nitEmpresa:
+        type: "String"
+        description: "Nit de la Empresa. Este servirá para usar el endpoint de Facturas. (Campo requerido)"
+      nombreCompleto:
+        type: "String"
+        description: "Nombre Completo del Usuario autenticado. (Campo opcional a ser retornado)"
+      error:
+        type: "String"
+        description: "Boolean que identifica si es un error o no."
+      message:
+        type: "String"
+        description: "Mensaje del error."
+      code:
+        type: "Int"
+        description: "Código del error."
